@@ -6,6 +6,12 @@ This is my ongoing PyTorch implementation for "Gated Feedback Recurrent Neural N
 - Python 2 or Python 3.
 - CPU or NVIDIA GPU + CUDA CuDNN.aa
 
+## Examples
+```Examples``` folder includes several basic RNN tasks such as classification and regression to give readers a taste of GFLSTM's effectiveness.
+
+<img src="/examples/RNN_regressor/RNN.png" width="400"> <img src="/examples/RNN_regressor/GFLSTM.png" width="400">
+
+
 ## Usage
 This ```GFLSTM.py``` could be easily used as RNN modules in ```torch.nn``` package.
 Following is an simple example
