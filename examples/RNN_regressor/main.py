@@ -75,7 +75,7 @@ h_state = None      # for initial hidden state
 # plt.ion()           # continuously plot
 # plt.show()
 win = None
-for step in range(60):
+for step in range(180):
     start, end = step * np.pi, (step+1)*np.pi   # time steps
     # use sin predicts cos
     steps = np.linspace(start, end, 10, dtype=np.float32)
@@ -103,7 +103,7 @@ for step in range(60):
         win = viz.line(
             X = np.column_stack((steps, steps)),
             Y = np.column_stack((y_np.flatten(), prediction.data.numpy().flatten())),
-            opts = dict(legend=['target (cos)','output (LSTM)']),
+            opts = dict(legend=['target (cos)','output (RNN)']),
         )
     else:
         win = viz.line(

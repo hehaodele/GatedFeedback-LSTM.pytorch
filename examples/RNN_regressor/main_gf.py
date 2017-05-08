@@ -75,7 +75,7 @@ zero_c = Variable(torch.zeros(2, 1, 32))
 h_state = (zero_h, zero_c)
 
 win = None
-for step in range(60):
+for step in range(180):
     start, end = step * np.pi, (step+1)*np.pi   # time steps
     # use sin predicts cos
     steps = np.linspace(start, end, 10, dtype=np.float32)
