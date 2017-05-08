@@ -1,0 +1,51 @@
+# LSTM for MNIST classification
+
+## 2 layer LSTM results
+```bash
+('Epoch: ', 0, '| train loss: 2.3053', '| test accuracy: 0.1025')
+('Epoch: ', 0, '| train loss: 0.8108', '| test accuracy: 0.6190')
+('Epoch: ', 0, '| train loss: 0.4699', '| test accuracy: 0.7500')
+('Epoch: ', 0, '| train loss: 0.7272', '| test accuracy: 0.8580')
+('Epoch: ', 0, '| train loss: 0.2883', '| test accuracy: 0.8705')
+('Epoch: ', 0, '| train loss: 0.4230', '| test accuracy: 0.8480')
+('Epoch: ', 0, '| train loss: 0.2969', '| test accuracy: 0.9100')
+('Epoch: ', 0, '| train loss: 0.2402', '| test accuracy: 0.8710')
+('Epoch: ', 0, '| train loss: 0.1256', '| test accuracy: 0.9450')
+('Epoch: ', 0, '| train loss: 0.2363', '| test accuracy: 0.9525')
+('Epoch: ', 0, '| train loss: **0.0805**', '| test accuracy: 0.9575')
+('Epoch: ', 0, '| train loss: 0.1660', '| test accuracy: 0.9480')
+('Epoch: ', 0, '| train loss: 0.1812', '| test accuracy: 0.9585')
+('Epoch: ', 0, '| train loss: 0.1784', '| test accuracy: 0.9500')
+('Epoch: ', 0, '| train loss: 0.1032', '| test accuracy: 0.9560')
+('Epoch: ', 0, '| train loss: 0.1577', '| test accuracy: 0.9450')
+('Epoch: ', 0, '| train loss: 0.1659', '| test accuracy: 0.9590')
+('Epoch: ', 0, '| train loss: 0.1241', '| test accuracy: **0.9590**')
+('Epoch: ', 0, '| train loss: 0.1627', '| test accuracy: 0.9475')
+(array([7, 2, 1, 0, 4, 1, 4, 9, 5, 9]), 'prediction number')
+(array([7, 2, 1, 0, 4, 1, 4, 9, 5, 9]), 'real number')
+```
+## 2 layer GFLSTM results
+```bash
+('Epoch: ', 0, '| train loss: 2.3041', '| test accuracy: 0.0890')
+('Epoch: ', 0, '| train loss: 1.0586', '| test accuracy: 0.5945')
+('Epoch: ', 0, '| train loss: 0.5329', '| test accuracy: 0.7575')
+('Epoch: ', 0, '| train loss: 0.3632', '| test accuracy: 0.8370')
+('Epoch: ', 0, '| train loss: 0.1357', '| test accuracy: 0.8945')
+('Epoch: ', 0, '| train loss: 0.3441', '| test accuracy: 0.8775')
+('Epoch: ', 0, '| train loss: 0.1746', '| test accuracy: 0.9270')
+('Epoch: ', 0, '| train loss: 0.1859', '| test accuracy: 0.9245')
+('Epoch: ', 0, '| train loss: 0.0836', '| test accuracy: 0.9150')
+('Epoch: ', 0, '| train loss: 0.2079', '| test accuracy: 0.9360')
+('Epoch: ', 0, '| train loss: 0.0812', '| test accuracy: 0.9440')
+('Epoch: ', 0, '| train loss: 0.3397', '| test accuracy: 0.9525')
+('Epoch: ', 0, '| train loss: 0.2232', '| test accuracy: 0.9385')
+('Epoch: ', 0, '| train loss: 0.1762', '| test accuracy: 0.9355')
+('Epoch: ', 0, '| train loss: 0.1472', '| test accuracy: 0.9485')
+('Epoch: ', 0, '| train loss: 0.1220', '| test accuracy: 0.9590')
+('Epoch: ', 0, '| train loss: 0.1825', '| test accuracy: 0.9510')
+('Epoch: ', 0, '| train loss: **0.0686**', '| test accuracy: **0.9615**')
+('Epoch: ', 0, '| train loss: 0.0839', '| test accuracy: 0.9470')
+(array([7, 2, 1, 0, 4, 1, 4, 9, 5, 9]), 'prediction number')
+(array([7, 2, 1, 0, 4, 1, 4, 9, 5, 9]), 'real number')
+
+```
