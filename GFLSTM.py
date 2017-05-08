@@ -23,13 +23,13 @@ class GFLSTM(nn.Module):
         - **c_n** (num_layers, batch, hidden_size): tensor containing the cell state for t=seq_len
     """
 
-    def __init__(self, input_size, hidden_size, num_layers, batch_first=False):
-        # assert batch_first == False
+    def __init__(self, input_size, hidden_size, num_layers, batch_first=False, dropout=0):
         super(GFLSTM, self).__init__()
         self.batch_first = batch_first
         self.input_size = input_size
         self.hidden_size = hidden_size
         self.num_layers = num_layers
+        self.dropout = dropout
         self.l_i2h = [nn.Linear(input_size, hidden_size * 3)]
         self.l_h2h = [nn.Linear(hidden_size, hidden_size * 3)]
         self.l_wc = [nn.Linear(input_size, hidden_size)]
@@ -62,7 +62,7 @@ class GFLSTM(nn.Module):
                 setattr(self, 'layer_wg_%d_%d' % (L,_L), self.l_wg[L][_L])
                 setattr(self, 'layer_ug_%d_%d' % (L,_L), self.l_ug[L][_L])
                 setattr(self, 'layer_uc_%d_%d' % (L,_L), self.l_uc[L][_L])
-
+        self.l_drop = nn.Dropout(dropout, inplace=True)
 
     def forward_one_step(self, input, hidden):
         nowh, nowc = hidden
@@ -70,7 +70,7 @@ class GFLSTM(nn.Module):
         nxth_list, nxtc_list = [], []
         for L in range(self.num_layers):
             if L > 0:
-                input = nxth_list[L - 1]  # (batch, input_size / hidden_size)
+                input = self.l_drop(nxth_list[L - 1])  # (batch, input_size / hidden_size)
             h, c = nowh[L], nowc[L]  # (batch, hidden_size)
             i2h, h2h = self.l_i2h[L](input), self.l_h2h[L](h)  # (batch, hidden_size * 3)
             # cell gates
