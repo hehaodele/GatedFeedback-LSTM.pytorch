@@ -99,11 +99,13 @@ class GFLSTM(nn.Module):
         return output, (nxth, nxtc)
 
     def forward(self, input, hidden):
-    	if self.batch_first: # convert batch_first to seq_first
+    	if self.batch_first: # seq_first to batch_first
     		input = F.torch.stack(input,dim=1)
         output = []
         for _in in input:
             _out, hidden = self.forward_one_step(_in, hidden)
             output.append(_out)
         output = F.torch.stack(output, dim=0)
+        if self.batch_first: # seq_first to batch_first
+            output = F.torch.stack(output,dim=1)
         return output, hidden
